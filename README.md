@@ -1,4 +1,5 @@
-Introdução
+#Introdução
+
 Corresponde ao projeto individual do módulo 3, proposto em parceria entre a Resilia e Senac RJ. Ele foi dividido em três partes:
 •	Desenvolvimento de um banco de dados 
 •	Apresentação das modelagens conceitual e lógica.
@@ -8,7 +9,8 @@ O banco de dados foi desenvolvido para armazenar informações essenciais para o
 Objetivos do Sistema RESILIADATA
 O sistema RESILIADATA visa facilitar a análise das tecnologias empregadas por empresas parceiras e fornecer informações sobre seus colaboradores. Para atingir esse propósito, o banco de dados aqui desenvolvido desempenha um papel crucial na organização e recuperação eficiente desses dados.
 
-Estrutura do Banco de Dados e funcionabilidade:
+#Estrutura do Banco de Dados e funcionabilidade:
+
 
 O banco de dados é projetado para suportar as seguintes funcionalidades:
 
