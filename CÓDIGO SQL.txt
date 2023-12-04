@@ -1,0 +1,73 @@
+create database RESILIADATA;
+use RESILIADATA;
+
+-- Criando a tabela Tecnoligia
+create table Tecnologia(
+idTecnologia int not null primary key,
+nome varchar(30) not null,
+descrição varchar(80) not null
+);
+
+-- Criando a tabela Empresas Parceiras
+create table EmpresasParceiras(
+idEmpresa int not null primary key,
+razãosocial varchar(140) not null,
+endereço varchar (120) not null,
+CNPJ varchar(80) not null,  
+email varchar (50) not null,
+tel varchar (14) not null,
+idtecnologia int not null,
+FOREIGN KEY (idtecnologia) REFERENCES Tecnologia(idtecnologia)  
+);
+
+-- Criando a Tabela Área
+CREATE TABLE Area(
+idarea int NOT NULL primary key,
+nome varchar(30) NOT NULL,
+especificação varchar(80) NOT NULL,
+idtecnologia int not null,
+FOREIGN KEY (idtecnologia) REFERENCES Tecnologia(idtecnologia)  
+);  
+
+-- Criando a Tabela Colaboradores
+CREATE TABLE Colaboradores(
+idmatricula int NOT NULL primary key,
+nome varchar(30) NOT NULL,
+endereço varchar(60) NOT NULL,
+CPF varchar(16) NOT NULL,
+email varchar(40) NOT NULL,
+tel varchar(14) NOT NULL,
+idEmpresa int NOT NULL,
+FOREIGN KEY (idEmpresa) REFERENCES EmpresasParceiras(idEmpresa)
+);
+
+
+INSERT INTO Tecnologia(idTecnologia,nome,descrição)
+VALUES (1, 'Python', 'Liguagem orientada por objeto utilizadas em diversas áreas.')  
+
+INSERT INTO Tecnologia(idTecnologia,nome,descrição)
+VALUES (2, 'ETL', 'É procedimento em extrair, transormar e carregar dados.')
+
+
+INSERT INTO EmpresasParceiras(idEmpresa,razãosocial,endereço,CNPJ,email, tel, idtecnologia)
+VALUES (1, 'Blue Seguros', 'Av. Barrão de Branco, s/n, Centro - RJ.','123.234/0001-23','blueseguro@gmail.com','21-9876-2345',1)  
+
+INSERT INTO EmpresasParceiras(idEmpresa,razãosocial,endereço,CNPJ,email, tel, idtecnologia)
+VALUES (2, 'Ebol Centro de Educacional', 'Av. Rei D, Pedro II, s/n, São Cristóvão - RJ.','123.234/0001-23','Ebol@gmail.com','21-9876-1234',2)
+
+
+INSERT INTO Area(idarea,nome,especificação, idtecnologia)
+VALUES (1, 'Dados', 'Setor voltado para análise e compreensão de dados',1)
+
+INSERT INTO Area(idarea,nome,especificação, idtecnologia)
+VALUES (2, 'Markenting', 'É setor que entrega valor de satisfação ',2)
+
+select * from Colaboradores
+INSERT INTO Colaboradores(idmatricula,nome,endereço,CPF,email, tel, idEmpresa)
+VALUES (1, 'Luiz Henrique Marques', 'Rua Acre 12, Centro - RJ.','097.123.234-33','lhm12@gmail.com','21-9876-0956',1)  
+
+INSERT INTO Colaboradores(idmatricula,nome,endereço,CPF,email, tel, idEmpresa)
+VALUES (2, 'Luiza Antônia Silva Malta', 'Rua Bela 102, São Cristóvao - RJ.','097.123.632-39','silmal@gmail.com','21-9896-1639',2)  
+
+
+
